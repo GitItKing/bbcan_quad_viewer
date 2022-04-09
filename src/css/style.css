@@ -1,0 +1,298 @@
+<style>
+input[type="button"],
+[type="checkbox"] {
+	cursor: pointer;
+	margin: 0;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+
+input[type="button"] {
+	height: 26px;
+	font-weight: 900;
+	-webkit-appearance: button;
+}
+
+input[type="checkbox"] {
+	margin-right: 5px;
+	/*vertical-align: middle;*/
+}
+
+.wrapperQ {
+	display: grid;
+	grid-template-columns: 640px 640px;
+	grid-template-rows: 28px 360px 360px 30px;
+	grid-gap: 2px;
+}
+
+.wrapperM {
+	display: grid;
+	grid-template-columns: 424px 424px 424px 4px;
+	grid-template-rows: 28px 720px 240px 30px;
+    grid-gap: 2px 4px;
+}
+
+.tpL {
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 1;
+	grid-row-end: 2;
+}
+
+.tpLM {
+	grid-column-start: 1;
+	grid-column-end: 4;
+	grid-row-start: 1;
+	grid-row-end: 2;
+}
+
+.tpR {
+	grid-column-start: 2;
+	grid-column-end: 3;
+	grid-row-start: 1;
+	grid-row-end: 2;
+}
+
+.btCM {
+	grid-column-start: 2;
+	grid-column-end: 3;
+	grid-row-start: 4;
+	grid-row-end: 5;
+}
+
+.fd1 {
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 2;
+	grid-row-end: 3;
+}
+.fd1M {
+	grid-column-start: 1;
+	grid-column-end: 4;
+	grid-row-start: 2;
+	grid-row-end: 3;
+}
+
+.fd2, .fd2M{
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 3;
+	grid-row-end: 4;
+}
+
+.fd3 {
+	grid-column-start: 2;
+	grid-column-end: 3;
+	grid-row-start: 2;
+	grid-row-end: 3;
+}
+
+.fd3M {
+	grid-column-start: 2;
+	grid-column-end: 3;
+	grid-row-start: 3;
+	grid-row-end: 4;
+}
+
+.fd4 {
+	grid-column-start: 2;
+	grid-column-end: 3;
+	grid-row-start: 3;
+	grid-row-end: 4;
+}
+
+.fd4M {
+	grid-column-start: 3;
+	grid-column-end: 4;
+	grid-row-start: 3;
+	grid-row-end: 4;
+}
+
+.btL, .btLM {
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 4;
+	grid-row-end: 5;
+}
+
+.btR {
+	grid-column-start: 2;
+	grid-column-end: 3;
+	grid-row-start: 4;
+	grid-row-end: 5;
+}
+
+.btRM {
+	grid-column-start: 3;
+	grid-column-end: 4;
+	grid-row-start: 4;
+	grid-row-end: 5;
+}
+
+#grid {
+    user-select: none
+}
+
+.refreshFeed {
+	margin-left: 4px;
+	cursor: pointer;
+}
+
+.feedTxt {
+	font-weight: 900;
+	font-size: 1.2rem;
+	padding: 0 5px;
+}
+
+.zoomBtns {
+    margin-right: 60px;
+	font-weight: 900;
+	float: right;
+}
+
+.zoomIcon {
+	padding: 0 5px;
+	cursor: pointer;
+	vertical-align: middle;
+	font-size: x-large;
+}
+
+.curZoom {
+	padding: 0 10px;
+}
+
+.swapBtns {
+	float: right;
+	font-size: .9rem;
+	font-weight: 900;
+}
+
+.chkDark {
+	float: right;
+	font-size: .9rem;
+	margin-right: 5px;
+}
+
+.oriImg {
+	height: 26px;
+	width: 26px;
+	margin: 0 5px;
+	vertical-align: top;
+	cursor: pointer;
+}
+
+.colImg {
+	margin: 0 10px 0 5px;
+	cursor: pointer;
+	font-size: x-large;
+	vertical-align: middle;
+}
+
+.rowImg {
+	margin: 0 10px 0 5px;
+	cursor: pointer;
+	font-size: x-large;
+	vertical-align: middle;
+}
+
+.marqImg {
+	height: 28px;
+	width: 40px;
+	vertical-align: top;
+	cursor: pointer;
+}
+
+.marqBtn {
+    margin-right: 40px;
+}
+
+.selMarq {
+	margin-right: 50px;
+	cursor: pointer;
+	text-decoration: underline;
+	float: right;
+}
+
+.selMarqHid {
+	display: none;
+}
+
+.helpBtn {
+	margin-left: 80px;
+	cursor: pointer;
+	font-size: x-large;
+	vertical-align: middle;
+}
+.fd1 div, .fd2 div,
+.fd3 div, .fd4 div {
+	width: 640px;
+	height: 360px;
+}
+
+.fd1M div {
+	width: 1280px;
+	height: 720px;
+}
+
+.fd2M div, .fd3M div, .fd4M div {
+	width: 424px;
+	height: 240px;
+}
+
+.ifrm {
+    width: 100%;
+	height: 100%;
+}
+
+.hlp {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-top: -40px;
+	padding: 20px;
+	transform: translate(-50%, -50%);
+	min-width: 800px;
+	background-color: #2e3744;
+	color: white;
+	border-radius: 15px;
+	text-align: center;
+	z-index: 100
+	max-height: 60%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: none;
+}
+
+.hlp h6 {
+	font-size: 30px;
+	margin: 0px 0px 10px 0px;
+}
+
+.hlp button {
+	font-size: 20px;
+	background-color: #FFF;
+	padding: 17px 20px;
+	color: #000;
+	text-decoration: none;
+	border-radius: 6px;
+	margin: 10px 0px;
+	cursor: pointer;
+}
+
+.hlp button:hover, .hlp button:focus {
+    color: red;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+ul.square {
+	text-align: left;
+	list-style-type: square;
+}
+ul.square li {
+	line-height: 20px;
+	margin-bottom: 10px;
+	font-size: 18px;
+}
+</style>
